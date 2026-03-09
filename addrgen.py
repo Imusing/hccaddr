@@ -37,7 +37,7 @@ def encode(input_image, output_image, message, seed=12345):
 
     valid_pixels = get_valid_pixels(img)
 
-    if len(bits) > len(valid_pixels):
+    if len(bits) > len(valid_pixels) or len(message) != 40:
         raise ValueError("Address too large. Please check your address length.")
 
     random.seed(seed)
